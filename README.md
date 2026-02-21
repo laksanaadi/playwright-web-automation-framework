@@ -1,6 +1,6 @@
-# playwright-web-automation-framework
-
 <img width="1536" height="768" alt="ChatGPT Image Feb 22, 2026, 05_37_11 AM" src="https://github.com/user-attachments/assets/3716bf48-b292-4b3d-ba6a-150cb8dc47bb" />
+
+# playwright-web-automation-framework
 
 ## Types of Automation Testing:
 1. UI Web
