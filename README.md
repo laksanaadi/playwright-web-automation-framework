@@ -17,6 +17,13 @@
 
 ## How to Getting Started:
 
+```sh
+$ git clone "url this project"
+$ cd playwright-web-automation-framework
+$ npm install
+$ npx playwright install
+```
+
 ## Websites Used for Testing:
 1. https://www.saucedemo.com/
 
