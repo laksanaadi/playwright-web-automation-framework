@@ -24,6 +24,9 @@ $ npm install
 $ npx playwright install
 ```
 
+## How to Run the Test:
+1. run npx playwright test
+
 ## Websites Used for Testing:
 1. https://www.saucedemo.com/
 
