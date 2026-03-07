@@ -1,19 +1,21 @@
 import { test, expect } from '@playwright/test';
+import { login } from '../utils/login.ts';
+import dotenv from 'dotenv';
+dotenv.config();
 
+test.describe('Saucelabs', () => {
 
 test('SL-04 - Logout', async ({ page }) => {
-    const username = 'standard_user';
-    const password = 'secret_sauce'
-    
-    // 1. Login first
-    await page.goto('https://www.saucedemo.com');
-    await page.fill('#user-name', username);
-    await page.fill('#password', password);
-    await page.click('#login-button');
+  // Test Data
+  const username = process.env.USERNAME_SAUCELABS!;
+  const password = process.env.PASSWORD_SAUCELABS!;
 
-    await page.click('#react-burger-menu-btn');
-    await page.click('#logout_sidebar_link');
+  await login(page, username, password);
+  
+  await page.click('#react-burger-menu-btn');
+  await page.click('#logout_sidebar_link');
     
-    await expect(page.locator('#login_button_container')).toBeVisible();
+  await expect(page.locator('#login_button_container')).toBeVisible();
 
   });
+});

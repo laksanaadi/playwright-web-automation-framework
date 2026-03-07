@@ -1,20 +1,19 @@
 import { test, expect } from '@playwright/test';
+import { login } from '../utils/login.ts';
+import dotenv from 'dotenv';
+dotenv.config();
 
 test('SL-03 - Add product to cart and complete checkout', async ({ page }) => {
-  // Test Data
-  const username = 'standard_user';
-  const password = 'secret_sauce';
+   // Test Data
+  const username = process.env.USERNAME_SAUCELABS!;
+  const password = process.env.PASSWORD_SAUCELABS!;
 
   const productName = 'Sauce Labs Backpack';
   const firstName = 'John';
   const lastName = 'Doe';
   const postalCode = '12345';
 
-  // 1. Login first
-  await page.goto('https://www.saucedemo.com');
-  await page.fill('#user-name', username);
-  await page.fill('#password', password);
-  await page.click('#login-button');
+  await login(page, username, password);
 
   // Ensure login success
   await expect(page).toHaveURL(/inventory/);
